@@ -5,6 +5,7 @@ import io.github.gustavoteo19.mscartoes.infra.repository.CartaoRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -21,6 +22,8 @@ public class CartaoService {
     }
 
     public List<Cartao> getCartoesRendaMenorIgual(Long renda){
-        return repository.fin
+        BigDecimal bigDecimal = BigDecimal.valueOf(renda);
+        return repository.findByRendaLessThanEqual(bigDecimal);
+
     }
 }

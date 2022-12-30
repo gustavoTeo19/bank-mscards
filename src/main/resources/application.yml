@@ -1,7 +1,11 @@
 spring:
   application:
     name: mscartoes
-
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
 server:
   port: 0
 
